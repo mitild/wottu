@@ -1,0 +1,96 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0f1019;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden !important;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden !important;
+  display: flex;
+  flex-direction: column;
+}
+
+body :is(button, a, input) {
+  color: #FFF;
+}
+
+button {
+  cursor: pointer;
+}
+
+body::-webkit-scrollbar {
+  display: none !important;
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.react-multi-carousel-list {
+  overflow: visible;
+}
+
+.react-multi-carousel-list:hover {
+  z-index: 999;
+  cursor: pointer;
+}
+
+.react-multi-carousel-item--active:hover {
+  z-index: 999;
+}
+
+.carouselItem {
+  max-width: 145px;
+  min-width: 145px;
+  margin-right: .7em;
+  cursor: pointer;
+  transition: all .4s ease;
+}
+
+@media (min-width: 600px) {
+  .carouselItem {
+      max-width: 225px;
+      min-width: 225px;
+    }
+}
+
+#YTVideo {
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all .4s ease;
+}
+
+.animate {
+  animation-duration: 0.5s;
+  animation-name: animate-fade;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
