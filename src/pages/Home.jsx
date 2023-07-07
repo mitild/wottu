@@ -16,10 +16,10 @@ const Home = () => {
   useEffect(() => {
     if (!userName && location.pathname !== '/login' && location.pathname !== '/sign-up') {
       const timeout = setTimeout(() => {
-        navigate('/login');
-      }, 10000);
+        navigate('/login')
+      }, 10000)
 
-      return () => clearTimeout(timeout);
+      return () => clearTimeout(timeout)
     }
   }, [userName, location.pathname, navigate])
 

@@ -50,7 +50,7 @@ const CategoryCarousel = ({ isType, title, shows }) => {
       <Carousel
         itemClass="carouselItem"
         responsive={responsive}
-        infinite={false}
+        infinite={true}
         partialVisible={false}
         swipeable={true}
         draggable={true}
