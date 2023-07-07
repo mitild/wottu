@@ -30,18 +30,18 @@ const CategoryCarousel = ({ isType, title, shows }) => {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 8,
-      slidesToSlide: 4 
+      items: 6,
+      slidesToSlide: 4
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
       items: 4,
-      slidesToSlide: 3 
+      slidesToSlide: 2 
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 4,
-      slidesToSlide: 3 
+      items: 3,
+      slidesToSlide: 2 
     }
 }
   return (
