@@ -26,12 +26,12 @@ const CategoryCarousel = ({ isType, title, shows }) => {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
       items: 9,
-      slidesToSlide: 5
+      slidesToSlide: 4
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 8,
-      slidesToSlide: 5 
+      slidesToSlide: 4 
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -50,7 +50,7 @@ const CategoryCarousel = ({ isType, title, shows }) => {
       <Carousel
         itemClass="carouselItem"
         responsive={responsive}
-        infinite={true}
+        infinite={false}
         partialVisible={false}
         swipeable={true}
         draggable={true}
