@@ -5,23 +5,10 @@ import { HomeContainer } from "../components/HomeAnimated/HomeAnimated.Styles"
 import { useContext, useEffect } from 'react'
 import { DataContext } from "../context/Context"
 import { UserContext } from "../context/userContext"
-import { useNavigate, useLocation } from "react-router-dom"
 
 const Home = () => {
   const { movies, series, upcomingMovies, upcomingSeries, trendingMovies, trendingSeries } = useContext(DataContext)
   const { userName } = useContext(UserContext)
-  const navigate = useNavigate()
-  const location = useLocation()
-
-  useEffect(() => {
-    if (!userName && location.pathname !== '/login' && location.pathname !== '/sign-up') {
-      const timeout = setTimeout(() => {
-        navigate('/login')
-      }, 10000)
-
-      return () => clearTimeout(timeout)
-    }
-  }, [userName, location.pathname, navigate])
 
   return (
     <HomeContainer>

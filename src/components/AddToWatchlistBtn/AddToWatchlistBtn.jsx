@@ -1,44 +1,51 @@
-import {useState, useContext, useEffect} from 'react';
+import { useState, useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { AddWLBtn, AddWLIcon, AddedText, AddedIcon } from "./AddToWatchlistBtn.Styles"
 import { DataContext } from '../../context/Context'
 import PropTypes from 'prop-types'
-import { UserContext } from '../../context/userContext';
+import { UserContext } from '../../context/userContext'
 
 const AddToWatchlistBtn = ({ id, type, title, img, votes, size, font, text, justifytext }) => {
 const [ added, setAdded ] = useState(false)
 const [ disabledBtn, setDisabledBtn ] = useState('')
 const { watchlist, setWatchlist } = useContext(DataContext)
-const { userAge } = useContext(UserContext)
+const { userAge, userName } = useContext(UserContext)
+const navigate = useNavigate()
 
 
 useEffect(() => {
-  setDisabledBtn(userAge === '+18' ? false : true)
+  setDisabledBtn(userAge === '-18' ? true : false)
 }, [])
 
 const handleAddToWatchlistBtn = () => {
-  setAdded(prev => !prev)
-  const showExists = watchlist.find(show => show.id === id)
-  const filteredWatchlist = watchlist.filter(show => show.id !== id)
+  if(userName) {
+    setAdded(prev => !prev)
+    const showExists = watchlist.find(show => show.id === id)
+    const filteredWatchlist = watchlist.filter(show => show.id !== id)
 
-  if(!showExists) {
-    setWatchlist(prev => {
-      return [
-        ...prev,
-        {
-          id: id,
-          type: type,
-          title: title,
-          img: img,
-          hasImage: true,
-          votes: votes
-        }
-      ]
-    })
+    if(!showExists) {
+      setWatchlist(prev => {
+        return [
+          ...prev,
+          {
+            id: id,
+            type: type,
+            title: title,
+            img: img,
+            hasImage: true,
+            votes: votes
+          }
+        ]
+      })
+    }
+    else {
+      setWatchlist(filteredWatchlist)
+    }
   }
   else {
-    setWatchlist(filteredWatchlist)
+    alert('must be logged in to add to watchlist')
+    navigate('/login')
   }
-
 }
 
 useEffect(() => {
