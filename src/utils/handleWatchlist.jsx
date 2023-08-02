@@ -13,7 +13,6 @@ const getUserWatchlist = async (setter) => {
         id: doc.id,
       }
     ))
-    // console.log(filteredData)
     setter(filteredData)
   }
   catch (err) {

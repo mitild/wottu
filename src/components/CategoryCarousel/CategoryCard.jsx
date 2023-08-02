@@ -82,6 +82,8 @@ function CategoryCard({ index, id, isType, shows }) {
           movieOrSeries={isType}
           width={"130px"}
           desktop_width={"130px"}
+          height={"90px"}
+          desktop_height={"90px"}
           title={isTitle}
         />
         <CatNoTitle>(No trailer available)</CatNoTitle>

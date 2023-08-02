@@ -13,7 +13,6 @@ const useGetProviders = (id, endpoint) => {
       const response = await axios.get(`${BASE_URL}${endpoint}/${id}/watch/providers`)
       const countryData = response.data.results['ES']      
       const providersIcons = countryData && countryData.flatrate.map(provider => provider.logo_path)
-      console.log(providersIcons)
       const providersLink = countryData && countryData.link
       const countryCodes = Object.keys(response.data)
       const firstCountryCode = countryCodes[0]
@@ -32,7 +31,6 @@ const useGetProviders = (id, endpoint) => {
     getProviders()
   },[])
 
-  // console.log(providers)
   return { providers }
 
 }

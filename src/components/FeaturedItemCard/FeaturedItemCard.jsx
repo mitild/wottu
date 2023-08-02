@@ -62,6 +62,8 @@ const FeaturedItemCard = ({ index, isMovie }) => {
             movieOrSeries={movieOrSeries} 
             width={'190px'} 
             desktop_width={ "320px" }
+            height={"100%"}
+            desktop_height={"100%"}
             title={ titleEl } 
           />
           <ShowMoreBtn

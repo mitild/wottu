@@ -17,7 +17,6 @@ const UserContextProvider = ({ children }) => {
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (currentUser) => {
       if(currentUser && usersDb.length > 0) {
-        console.log(currentUser)
         const user = usersDb.find((user) => user.email === currentUser.email)
         setCurrentAvatar(user ? user.avatarUrl : '/avatar-placeholder.png')
         setUserName(user && user.userName)
@@ -27,7 +26,6 @@ const UserContextProvider = ({ children }) => {
         setCurrentAvatar('/avatar-placeholder.png')
         setUserName(undefined)
         setUserAge('')
-        console.log('not user connected')
       }
     })
     return listen
